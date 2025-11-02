@@ -10,7 +10,7 @@ const int SZ_NAMES = 200, SZ_COLORS = 25;
 int select_goat(list<Goat> trip);
 void delete_goat(list<Goat> &trip);
 void add_goat(list<Goat> &trip, string [], string []);
-void display_trip(list<Goat> trip);
+void display_trip(const list<Goat> &trip);
 int main_menu();
 
 int main() {
@@ -58,9 +58,9 @@ int main() {
                 cout << "Displaying goat data.\n";
                 display_trip(trip);
                 break;
-            case 5:    
+            case 4:    
                 cout << "Sorting the goat data\n";
-                trip.sort()
+                trip.sort();
                 display_trip(trip);
                 break;
             default:
@@ -110,7 +110,7 @@ void add_goat(list<Goat> &trip, string nms[], string cls[]) {
     cout << "Goat added. New trip size: " << trip.size() << endl;
 }
 
-void display_trip(list<Goat> trp) {
+void display_trip(const list<Goat> &trp) {
     int i = 1;
     for (auto gt: trp)
         cout << "\t" 
