@@ -44,7 +44,7 @@ int main() {
     
     // Goat Manager 3001 Engine
     int sel = main_menu();
-    while (sel != 11) {
+    while (sel != 12) {
         switch (sel) {
             case 1:
                 cout << "Adding a goat.\n";
@@ -63,19 +63,19 @@ int main() {
                 break;
             case 4:    
                 cout << "Sorting the goat data\n";
-                trip.sort();
+                trip.sort(); //soring it in alphabetical order
                 display_trip(trip);
                 cout << endl;
                 break;
             case 5:    
                 cout << "Reversing the goat data\n";
-                trip.reverse();
+                trip.reverse(); //reversing the list
                 display_trip(trip);
                 cout << endl;
                 break;
             case 6:    
                 cout << "List is cleared\n";
-                trip.clear();
+                trip.clear(); //removing all the data in the list, leaving it empty
                 display_trip(trip);
                 cout << endl;
                 break;
@@ -94,17 +94,21 @@ int main() {
             case 9:{    
                 cout << "The first goat\n";
                 const Goat &first = trip.front();
-                cout << first.get_name() << " (" << first.get_age() << ", " << first.get_color() << ")\n";
+                cout << first.get_name() << " (" << first.get_age() << ", " << first.get_color() << ")\n"; //displaying data of the first goat
                 cout << endl;
                 break;
             }
             case 10:{    
                 cout << "The last goat\n";
                 const Goat &back = trip.back();
-                cout << back.get_name() << " (" << back.get_age() << ", " << back.get_color() << ")\n";
+                cout << back.get_name() << " (" << back.get_age() << ", " << back.get_color() << ")\n"; //displaying data of the last goat
                 cout << endl;
                 break;
             }
+            case 11: 
+                cout << "The size of this goat list is: " << trip.size() << endl; //the number of data in the list
+                cout << endl;
+                break;
             default:
                 cout << "Invalid selection.\n";
                 break;
@@ -128,11 +132,12 @@ int main_menu() {
     cout << "[8] Removing the first goat\n";
     cout << "[9] Wanting to know the first goat\n";
     cout << "[10] Wanting to know the last goat\n";
-    cout << "[11] Quit\n";
+    cout << "[11] The size of the list\n";
+    cout << "[12] Quit\n";
     cout << "Choice --> ";
     int choice;
     cin >> choice;
-    while (choice < 1 || choice > 11) {
+    while (choice < 1 || choice > 12) {
         cout << "Invalid, again --> ";
         cin >> choice;
     }
