@@ -97,12 +97,12 @@ int main_menu() {
     cout << "[4] Sort the goats alphabetically\n";
     cout << "[5] Reverse\n";
     cout << "[6] Clear out the list\n";
-    cout << "[8] Remove the last goat\n";
-    cout << "[7] Quit\n";
+    cout << "[7] Remove the last goat\n";
+    cout << "[8] Quit\n";
     cout << "Choice --> ";
     int choice;
     cin >> choice;
-    while (choice < 1 || choice > 7) {
+    while (choice < 1 || choice > 8) {
         cout << "Invalid, again --> ";
         cin >> choice;
     }
