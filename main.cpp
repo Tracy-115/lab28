@@ -83,11 +83,12 @@ int main() {
                 trip.pop_front();
                 display_trip(trip);
                 break;
-            case 9:    
+            case 9:{    
                 cout << "The first goat\n";
                 const Goat &first = trip.front();
                 cout << "The first goat is: " << first.get_name() << " (" << first.get_age() << ", " << first.get_color() << ")\n";
                 break;
+            }
             default:
                 cout << "Invalid selection.\n";
                 break;
