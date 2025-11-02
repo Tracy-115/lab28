@@ -44,49 +44,65 @@ int main() {
     
     // Goat Manager 3001 Engine
     int sel = main_menu();
-    while (sel != 10) {
+    while (sel != 11) {
         switch (sel) {
             case 1:
                 cout << "Adding a goat.\n";
                 add_goat(trip, names, colors);
+                cout << endl;
                 break;
             case 2:    
                 cout << "Removing a goat.\n";
                 delete_goat(trip);
+                cout << endl;
                 break;
             case 3:    
                 cout << "Displaying goat data.\n";
                 display_trip(trip);
+                cout << endl;
                 break;
             case 4:    
                 cout << "Sorting the goat data\n";
                 trip.sort();
                 display_trip(trip);
+                cout << endl;
                 break;
             case 5:    
                 cout << "Reversing the goat data\n";
                 trip.reverse();
                 display_trip(trip);
+                cout << endl;
                 break;
             case 6:    
                 cout << "List is cleared\n";
                 trip.clear();
                 display_trip(trip);
+                cout << endl;
                 break;
             case 7:    
                 cout << "Removing the last goat\n";
                 trip.pop_back();
                 display_trip(trip);
+                cout << endl;
                 break;
             case 8:    
                 cout << "Removing the first goat\n";
                 trip.pop_front();
                 display_trip(trip);
+                cout << endl;
                 break;
             case 9:{    
                 cout << "The first goat\n";
                 const Goat &first = trip.front();
-                cout << "The first goat is: " << first.get_name() << " (" << first.get_age() << ", " << first.get_color() << ")\n";
+                cout << first.get_name() << " (" << first.get_age() << ", " << first.get_color() << ")\n";
+                cout << endl;
+                break;
+            }
+            case 10:{    
+                cout << "The last goat\n";
+                const Goat &back = trip.back();
+                cout << back.get_name() << " (" << back.get_age() << ", " << back.get_color() << ")\n";
+                cout << endl;
                 break;
             }
             default:
@@ -111,11 +127,12 @@ int main_menu() {
     cout << "[7] Remove the last goat\n";
     cout << "[8] Removing the first goat\n";
     cout << "[9] Wanting to know the first goat\n";
-    cout << "[10] Quit\n";
+    cout << "[10] Wanting to know the last goat\n";
+    cout << "[11] Quit\n";
     cout << "Choice --> ";
     int choice;
     cin >> choice;
-    while (choice < 1 || choice > 10) {
+    while (choice < 1 || choice > 11) {
         cout << "Invalid, again --> ";
         cin >> choice;
     }
